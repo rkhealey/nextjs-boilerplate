@@ -1,0 +1,41 @@
+{
+  "name": "nextjs-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test jest",
+    "dev": "next src",
+    "build": "next build src",
+    "start": "next start src",
+    "eslint": "eslint src/**/*.js"
+  },
+  "pre-commit": [
+    "eslint"
+  ],
+  "author": "rkhealey",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^22.4.3",
+    "lodash": "^4.17.10",
+    "next": "^6.0.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
+    "jest": "^22.4.3",
+    "pre-commit": "^1.2.2",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.3.2"
+  }
+}
