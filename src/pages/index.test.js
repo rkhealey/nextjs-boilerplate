@@ -1,12 +1,23 @@
+import _ from 'lodash';
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import App from './index';
+import { MainForTest as Main } from './';
+
+const mockStore = {
+  dispatch: _.noop,
+  getState: () => ({
+    counter: {
+      count: 10,
+    },
+  }),
+};
 
 describe('main page', () => {
-  it('renders"', () => {
-    const app = shallow(<App />);
+  it('renders with count', () => {
+    const { count } = Main.getInitialProps({ store: mockStore });
+    const main = shallow(<Main count={count} />);
 
-    expect(app).toMatchSnapshot();
+    expect(main).toMatchSnapshot();
   });
 });
