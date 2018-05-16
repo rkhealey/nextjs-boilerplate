@@ -14,7 +14,9 @@ module.exports = {
   ],
   coveragePathIgnorePatterns: [
     '<rootDir>/src/.next/',
+    '<rootDir>/src/styles/',
     '<rootDir>/src/pages/_app.js',
+    '<rootDir>/src/pages/_document.js',
     '<rootDir>/src/redux/store.js',
     '<rootDir>/src/redux/reducers/index.js',
   ],

@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+
+import defaultTheme from '../styles/defaultTheme';
 
 class Main extends Component {
   static getInitialProps({ store }) {
@@ -11,7 +14,9 @@ class Main extends Component {
 
   render() {
     return (
-      <div>The current count is {this.props.count}</div>
+      <ThemeProvider theme={defaultTheme}>
+        <div>The current count is {this.props.count}</div>
+      </ThemeProvider>
     );
   }
 }

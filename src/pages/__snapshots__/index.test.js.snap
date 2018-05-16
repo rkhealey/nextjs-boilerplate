@@ -1,8 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`main page renders with count 1`] = `
-<div>
-  The current count is 
-  10
-</div>
+<ThemeProvider
+  theme={
+    Object {
+      "buttonPrimary": Object {
+        "bgColor": "#000000",
+      },
+      "colorError": "#FF1744",
+      "colorPrimary": "#ff02fe",
+      "colorText": "#000000",
+      "colorWhite": "#ffffff",
+      "gridGutter": 30,
+      "maxWidth": "95%",
+    }
+  }
+>
+  <div>
+    The current count is 
+    10
+  </div>
+</ThemeProvider>
 `;
