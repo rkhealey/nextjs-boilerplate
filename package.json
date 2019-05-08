@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "scripts/test",
-    "dev": "next src",
-    "build": "next build src",
-    "start": "next start src",
+    "dev": "next src/app",
+    "build": "next build src/app",
+    "start": "next start src/app",
     "eslint": "eslint src/**/*.js"
   },
   "pre-commit": [
