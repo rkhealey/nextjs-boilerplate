@@ -19,8 +19,10 @@ export default class MyDocument extends Document {
           <meta charSet="UTF-8" />
           <meta content="width=device-width, initial-scale=1" name="viewport" />
           <meta name="description" content="NextJS Boilerplate" />
+          <meta name="theme-color" content="#F16C7A" />
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
           <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet" />
+          <link rel="manifest" href="/static/manifest.json" />
           {this.props.styleTags}
         </Head>
         <body>
