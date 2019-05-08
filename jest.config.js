@@ -23,4 +23,5 @@ module.exports = {
   snapshotSerializers: [
     '<rootDir>/node_modules/enzyme-to-json/serializer',
   ],
+  testURL: 'http://localhost/',
 };
