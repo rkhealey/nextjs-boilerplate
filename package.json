@@ -4,15 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "scripts/test",
+    "test": "jest",
     "dev": "node src/server",
     "build": "next build src/app",
     "start": "next start src/app",
-    "eslint": "eslint src/**/*.js"
+    "eslint": "eslint src/**/*.js",
+    "copy-deps": "cpx \"*{package.json,package-lock.json}\" \"dist/functions\" -C",
+    "copy-static": "mkdir -p \"dist/public/static\" && cpx \"src/app/static/**/*.*\" \"dist/public/static\" -C",
+    "build-public": "cpx \"src/public/**/*.*\" \"dist/public\" -C && npm run copy-static",
+    "build-funcs": "babel \"src/server\" --out-dir \"dist/functions\"",
+    "build-app": "next build \"src/app/\"",
+    "preserve": "npm run build-public && npm run build-funcs && npm run build-app && npm run copy-deps && npm run install-deps",
+    "serve": "NODE_ENV=production firebase serve",
+    "predeploy": "npm run build-public && npm run build-funcs && npm run build-app && npm run copy-deps",
+    "deploy": "firebase deploy"
   },
   "pre-commit": [
-    "eslint",
-    "test"
+    "eslint"
   ],
   "author": "rkhealey",
   "license": "ISC",
@@ -22,6 +30,9 @@
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.4",
+    "firebase-admin": "^7.3.0",
+    "firebase-functions": "^2.3.0",
+    "firebase-tools": "^6.9.0",
     "lodash": "^4.17.10",
     "next": "^8.1.0",
     "next-redux-wrapper": "^2.0.0-beta.6",
@@ -37,8 +48,10 @@
     "styled-components": "^3.4.10"
   },
   "devDependencies": {
+    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "babel-eslint": "^8.2.3",
+    "cpx": "^1.5.0",
     "enzyme-to-json": "^3.3.3",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
@@ -49,5 +62,8 @@
     "pre-commit": "^1.2.2",
     "react-addons-test-utils": "^15.6.2",
     "react-test-renderer": "^16.3.2"
+  },
+  "engines": {
+    "node": "8"
   }
 }

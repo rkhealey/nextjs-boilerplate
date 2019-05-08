@@ -1,24 +1,16 @@
 module.exports = {
   setupFiles: ['<rootDir>/jest.setup.js'],
-  testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
-  coverageThreshold: {
-    global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
-    },
-  },
+  testPathIgnorePatterns: ['<rootDir>/src/app/.next/', '<rootDir>/node_modules/'],
   collectCoverageFrom: [
     'src/**/*.{js,jsx}',
   ],
   coveragePathIgnorePatterns: [
-    '<rootDir>/src/.next/',
-    '<rootDir>/src/styles/',
-    '<rootDir>/src/pages/_app.js',
-    '<rootDir>/src/pages/_document.js',
-    '<rootDir>/src/redux/store.js',
-    '<rootDir>/src/redux/reducers/index.js',
+    '<rootDir>/src/app/.next/',
+    '<rootDir>/src/app/styles/',
+    '<rootDir>/src/app/pages/_app.js',
+    '<rootDir>/src/app/ppages/_document.js',
+    '<rootDir>/src/app/redux/store.js',
+    '<rootDir>/src/app/redux/reducers/index.js',
   ],
   snapshotSerializers: [
     '<rootDir>/node_modules/enzyme-to-json/serializer',

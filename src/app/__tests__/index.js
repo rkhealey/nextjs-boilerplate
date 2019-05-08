@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { shallow } from 'enzyme';
 import React from 'react';
 
-import { MainForTest as Main } from './';
+import { MainForTest as Main } from '../pages';
 
 const mockStore = {
   dispatch: _.noop,
