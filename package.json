@@ -35,6 +35,7 @@
     "firebase-tools": "^6.9.0",
     "lodash": "^4.17.10",
     "next": "^8.1.0",
+    "next-offline": "^3.3.8",
     "next-redux-wrapper": "^2.0.0-beta.6",
     "prop-types": "^15.6.1",
     "react": "^16.6.0",
